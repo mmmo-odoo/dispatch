@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<odoo>
+    <menuitem id = "dispatch_menu" name = "Fleet" action = "dispatch_property_action"/>
+    <menuitem
+        id = "fleet"
+        name = "Fleet"
+        parent = "dispatch_menu"
+        action = "dispatch_property_action"
+        sequence = "1"
+        />
+
+    <menuitem 
+        id="reporting"
+        name="Reporting"
+        parent="dispatch_menu"
+        action="dispatch_property_action"
+        sequence = "2"
+    
+    />
+    <menuitem 
+        id="configurations"
+        name="Configurations"
+        parent="dispatch_menu"
+        action="dispatch_property_action"
+        sequence = "3"
+    
+    />
+</odoo>
