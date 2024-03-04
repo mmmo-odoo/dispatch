@@ -1,6 +1,7 @@
 {
     'name' : 'Dispatch Management System',
     'version' : '1.0',
+    'license':'LGPL-3',
     'author': "Mayank Mangal Mourya",
     'summary' : 'Track Real Time Requirements For Dispatch Management',
     'description' : """
