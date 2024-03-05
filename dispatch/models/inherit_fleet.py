@@ -11,3 +11,4 @@ class FleetVehicle(models.Model):
         for line in self:
             name = f"{line.name}({line.max_weight}kg, {line.max_volume}m\u00B3)"
             line.display_name = name
+            

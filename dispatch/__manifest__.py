@@ -18,8 +18,9 @@
     ],
     'data' : [
         'security/ir.model.access.csv',
-        'views/inherit_batch_transfer_view.xml',
         'views/inherit_fleet_view.xml',
+        'views/inherit_batch_transfer_transfer.xml',
+        'views/inherit_batch_transfer_view.xml',
         'views/dispatch_property_doc.xml',
         'views/dispatch_property_view.xml',
         'views/dispatch_property_menu.xml',

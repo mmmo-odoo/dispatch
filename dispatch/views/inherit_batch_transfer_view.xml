@@ -8,9 +8,54 @@
             <xpath expr="//field[@name='scheduled_date']" position="after">
                 <field name = "dock"/>
                 <field name = "vehicle_id" placeholder="e.g. third Party Provider"/>
-                <field name = "vehicle_category" placeholder="e.g. Semi-truck"/>
-                <field name = "weight"/>
+                <field name = "vehicle_category_id" placeholder="e.g. Semi-truck"/>
+                <field name = "weight" widget="progressbar"/>
+                <field name = "volume" widget="progressbar"/>
             </xpath>
+        </field>
+    </record>
+    <record id="stock_picking_batch.stock_picking_batch_action" model="ir.actions.act_window">
+        <field name="view_mode">tree,kanban,form,graph,gantt</field>
+    </record>
+    <record id="stock_picking_batch_inherit_graph" model="ir.ui.view">
+        <field name="name">stock.picking.batch.inherit.graph</field>
+        <field name="model">stock.picking.batch</field>
+        <field name="arch" type="xml">
+            <graph type="bar" stacked="True">
+                <field name="weight" type = "measure"/>
+                <field name="volume" type = "measure"/>
+            </graph>
+        </field>
+    </record>
+    <record id="stock_picking_batch_inherit_gantt" model="ir.ui.view">
+        <field name="name">stock.picking.batch.inherit.gantt</field>
+        <field name="model">stock.picking.batch</field>
+        <field name="arch" type="xml">
+            <gantt date_start = "date_from"
+                decoration-info="state == 'draft'"
+                date_stop = "date_to"
+                default_group_by = "vehicle_id"
+                color="dock"
+                default_scale="week"
+                precision="{'day': 'hour:full', 'week': 'day:full', 'month': 'day:full', 'year': 'day:full'}"
+                >    
+                <field name="state"></field>
+                <field name = "date_from"/>
+                <field name="vehicle_category_id"/>
+                <templates>
+                    <div t-name="gantt-popover" class="container-fluid">
+                        <div class="row g-0">
+                            <div class="col">
+                                <ul class="ps-1 mb-0 list-unstyled">
+                                    <li><strong>Start Date: </strong><t t-esc="date_start.toFormat('F')"/></li>
+                                    <li><strong>Stop Date: </strong><t t-esc="date_finished.toFormat('F')"/></li>
+                                    <li><strong>Vehicle Category Id: </strong> <t t-esc="vehicle_category_id[1]"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </templates>
+            </gantt>
         </field>
     </record>
 </odoo>
