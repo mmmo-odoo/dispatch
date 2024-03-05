@@ -2,7 +2,5 @@ from odoo import fields, models
 
 class DispatchProperty(models.Model):
     _name = "dispatch.property"
-    _description = "Control Dispatch Management System"
+    _description = "Used for Vehicle Transportation"
     name = fields.Char(required = True)
-    max_weight = fields.Integer(string="Max Weight (Kg)")
-    max_volume = fields.Integer(string="Max Volume (m^3)")

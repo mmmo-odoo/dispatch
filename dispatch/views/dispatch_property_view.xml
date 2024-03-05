@@ -4,19 +4,6 @@
     <record id = "dispatch_property_action" model = "ir.actions.act_window">
         <field name="name">Categories</field>
         <field name = "res_model">dispatch.property</field>
-        <field name="view_mode">tree</field>
+        <field name="view_mode">tree,form</field>
     </record>
-    <record id="estate_property_tree_view" model="ir.ui.view">
-        <field name="name">Categories.tree</field>
-        <field name="model">dispatch.property</field>
-        <field name="arch" type="xml">
-            <tree
-            string="Tests"> 
-                <field name="name"/>
-                <field name="max_weight"/>
-                <field name = "max_volume"/>
-            </tree>
-        </field>        
-    </record>
-
 </odoo>

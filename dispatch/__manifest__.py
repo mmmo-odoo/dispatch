@@ -1,9 +1,9 @@
 {
-    'name' : 'Dispatch Management System',
+    'name' : 'Stock Transport',
     'version' : '1.0',
     'license':'LGPL-3',
     'author': "Mayank Mangal Mourya",
-    'summary' : 'Track Real Time Requirements For Dispatch Management',
+    'summary' : 'Track Real Time Requirements Stock Transport and Dispatch Management',
     'description' : """
         The Dispatch Management System is designed to streamline and optimize the process of dispatching goods and managing 
         logistics. This system efficiently handles order fulfillment, tracking, and delivery coordination. 
@@ -12,11 +12,15 @@
         reduces errors, and improves overall logistics performance. This system is crucial for businesses involved in 
         transportation, delivery services, and supply chain management, ensuring timely and cost-effective dispatch operations.
     """,
-    'depend' : [
-        'base'
+    'depends' : [
+        'fleet',
+        'stock_picking_batch',
     ],
     'data' : [
         'security/ir.model.access.csv',
+        'views/inherit_batch_transfer_view.xml',
+        'views/inherit_fleet_view.xml',
+        'views/dispatch_property_doc.xml',
         'views/dispatch_property_view.xml',
         'views/dispatch_property_menu.xml',
     ],

@@ -23,6 +23,12 @@
         parent="dispatch_menu"
         action="dispatch_property_action"
         sequence = "3"
-    
+    />
+
+    <menuitem
+        id = "prop_Doc"
+        name = "Property Doc"
+        parent = "configurations"
+        action = "dispatch_property_doc_action"
     />
 </odoo>
